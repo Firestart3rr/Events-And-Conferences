@@ -15,10 +15,26 @@ import {EventService} from './shared';
 })
 export class CreateEventComponent {
 
-  newEvent;
+  newEvent: any;
   isDirty = true
   constructor(private router: Router,
               private eventService: EventService) {
+  }
+
+  ngOnInit() {
+    this.newEvent = {
+      name: 'Ng Spectacular',
+      date: '8/8/8888',
+      time: '10am',
+      price: 799.99,
+      location: {
+        address: '456 Happy St',
+        city: 'Felicity',
+        country: 'Angularistan'
+      },
+      onlineUrl: 'http://ngSpectacular.com',
+      imageUrl: 'http://ngSpectacular.com/logo.png',
+    }
   }
 
   saveEvent(formValues) {
@@ -30,4 +46,6 @@ export class CreateEventComponent {
   cancel() {
     this.router.navigate(['/events']);
   }
+
+
 }
