@@ -18,8 +18,8 @@ import {IEvent} from '../shared/index';
 })
 export class EventDetailsComponent {
   event: IEvent
-  constructor(private eventService:EventService,
-              private route:ActivatedRoute) {
+  constructor(private eventService: EventService,
+              private route: ActivatedRoute) {
   }
 
   ngOnInit() {
