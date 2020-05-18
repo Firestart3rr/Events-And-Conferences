@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'simple-modal',
   template: `
     <div id="simple-modal" class="modal fade" tabindex="-1">
