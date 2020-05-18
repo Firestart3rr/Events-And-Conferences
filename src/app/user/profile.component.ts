@@ -17,7 +17,7 @@ import {TOASTR_TOKEN, Toastr} from '../common/toastr.service';
 })
 export class ProfileComponent implements OnInit {
 
-  profileForm: FormGroup
+  profileForm: FormGroup;
   private firstName: FormControl;
   private lastName: FormControl;
 
