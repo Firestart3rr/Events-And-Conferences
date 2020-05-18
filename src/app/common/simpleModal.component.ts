@@ -4,14 +4,12 @@ import {Component, Input} from '@angular/core';
   // tslint:disable-next-line:component-selector
   selector: 'simple-modal',
   template: `
-    <div id="simple-modal" class="modal fade" tabindex="-1">
+    <div id="{{elementId}}" class="modal fade" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">
-              <span>&times;</span>
-              <h4 class="modal-title">{{title}}</h4>
-            </button>
+            <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+            <h4 class="modal-title">{{title}}</h4>
           </div>
           <div class="modal.body">
             <ng-content></ng-content>
@@ -26,4 +24,5 @@ import {Component, Input} from '@angular/core';
 })
 export class SimpleModalComponent {
   @Input() title: string;
+  @Input() elementId: string;
 }
