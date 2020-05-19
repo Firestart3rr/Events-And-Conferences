@@ -13,7 +13,7 @@ export class SessionListComponent implements OnChanges {
   @Input() sortBy: string;
   visibleSessions: ISession[] = [];
 
-  constructor(private auth: AuthService,
+  constructor(public auth: AuthService,
               private voterService: VoterService) {
   }
 
