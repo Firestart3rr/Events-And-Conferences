@@ -12,7 +12,8 @@ import {
   CreateSessionComponent,
   SessionListComponent,
   DurationPipe,
-  UpvoteComponent
+  UpvoteComponent,
+  VoterService
 } from './events/index';
 
 import {EventsAppComponent} from './events-app.component';
@@ -73,7 +74,8 @@ let jQuery = window['$'];
     {
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtyState
-    }
+    },
+    VoterService
   ],
   bootstrap: [EventsAppComponent]
 })
