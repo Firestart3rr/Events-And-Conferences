@@ -1,6 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../user/auth.service';
-import {EventService, ISession} from '../events/shared';
+import {EventService, IEvent, ISession} from '../events/shared';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   // tslint:disable-next-line:component-selector
