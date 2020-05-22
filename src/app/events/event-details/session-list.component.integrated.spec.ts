@@ -1,12 +1,13 @@
 import {TestBed, async, ComponentFixture} from '@angular/core/testing';
-import {DebugElement} from '@angular/core';
+import {Component, DebugElement, NO_ERRORS_SCHEMA} from '@angular/core';
 import {SessionListComponent} from './session-list.component';
 import {AuthService} from '../../user/auth.service';
 import {VoterService} from './voter.service';
 import {DurationPipe, ISession} from '../shared';
 import {By} from '@angular/platform-browser';
-import {UpvoteComponent} from './upvote.component';
+// import {UpvoteComponent} from './upvote.component';
 import {CollapsibleWellComponent} from '../../common';
+
 
 describe('SessionListComponent', () => {
   let fixture: ComponentFixture<SessionListComponent>,
@@ -27,15 +28,17 @@ describe('SessionListComponent', () => {
       imports: [],
       declarations: [
         SessionListComponent,
-        UpvoteComponent,
+        // UpvoteComponent,
         DurationPipe,
-        CollapsibleWellComponent
+        // CollapsibleWellComponent
       ],
       providers: [
         {provide: AuthService, useValue: mockAuthService},
         {provide: VoterService, useValue: mockVoterService}
       ],
-      schemas: []
+      schemas: [
+        NO_ERRORS_SCHEMA
+      ]
     });
   }));
 
@@ -58,6 +61,6 @@ describe('SessionListComponent', () => {
 
       // expect(element.querySelector('[well-title]').textContent).toContain('Session 1');
       expect(debugEl.query(By.css('[well-title]')).nativeElement.textContent).toContain('Session 1');
-    })
-  })
+    });
+  });
 });
